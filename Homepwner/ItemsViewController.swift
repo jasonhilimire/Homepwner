@@ -12,6 +12,10 @@ class ItemsViewController: UITableViewController {
     
     var itemStore: ItemStore!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return itemStore.allItems.count
     }
@@ -25,5 +29,7 @@ class ItemsViewController: UITableViewController {
         
         return cell
     }
+    
+    
     
 }
