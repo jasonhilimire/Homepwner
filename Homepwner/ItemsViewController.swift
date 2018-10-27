@@ -1,4 +1,3 @@
-//
 //  ItemsViewController.swift
 //  Homepwner
 //
@@ -14,10 +13,36 @@ class ItemsViewController: UITableViewController {
     
     
     @IBAction func addNewItem(_ sender: UIButton) {
+        //Create a new item and add to the store
+        let newItem = itemStore.createItem()
         
+        
+        //Insert this new row into the table
+        
+        //Figure out where that item is in the array
+        if let index = itemStore.allItems.index(of: newItem) {
+            let indexPath = IndexPath(row: index, section: 0)
+        
+        //Inser tnew row into the table
+            tableView.insertRows(at: [indexPath], with: .automatic)
+        
+        }
     }
     
     @IBAction func toggleEditingMode(_ sender: UIButton) {
+        // If currently editing
+        if isEditing {
+            //change text of button to inform user of state
+            sender.setTitle("Edit", for: .normal)
+            
+            //Turn off Editing mode
+            setEditing(false, animated: true)
+        } else {
+            sender.setTitle("Done", for: .normal)
+            
+            //Enter Editing mode
+            setEditing(true, animated: true)
+        }
         
     }
     override func viewDidLoad() {
