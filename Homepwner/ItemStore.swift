@@ -12,6 +12,14 @@ class ItemStore {
     
     var allItems = [Item]()
     
+    @IBAction func addNewItem(_ sender: UIButton) {
+        
+    }
+    
+    @IBAction func toggleEditingMode(_ sender: UIButton) {
+        
+    }
+    
     @discardableResult func createItem() -> Item {
     let newItem = Item(random: true)
     
