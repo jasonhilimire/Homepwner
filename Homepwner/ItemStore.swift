@@ -28,5 +28,21 @@ class ItemStore {
             allItems.remove(at: index)
         }
     }
+    
+    
+    // enable moving an item
+    func moveItem(from fromIndex: Int, to toIndex: Int) {
+        if fromIndex == toIndex {
+            return
+        }
+        //Get refrence to object being moved so can reinsert
+        let movedItem = allItems[fromIndex]
+        
+        //Remove from Aray
+        allItems.remove(at: fromIndex)
+        
+        //Insert into new location
+        allItems.insert(movedItem, at: toIndex)
+    }
 
 }

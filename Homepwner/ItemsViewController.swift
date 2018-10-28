@@ -75,5 +75,11 @@ class ItemsViewController: UITableViewController {
         }
     }
     
+    //enable moving a row
+    override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        //Update the Model
+        itemStore.moveItem(from: sourceIndexPath.row, to: destinationIndexPath.row)
+    }
+
     
 }
