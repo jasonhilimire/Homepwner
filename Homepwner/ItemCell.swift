@@ -10,5 +10,16 @@ import UIKit
 
 class ItemCell: UITableViewCell {
     
+    @IBOutlet var nameLabel: UILabel!
+    @IBOutlet var serialNumberLabel: UILabel!
+    @IBOutlet var valueLabel: UILabel!
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        //allows the labes to automatically adjust for size
+        nameLabel.adjustsFontForContentSizeCategory = true
+        serialNumberLabel.adjustsFontForContentSizeCategory = true
+        valueLabel.adjustsFontForContentSizeCategory = true
+    }
 }

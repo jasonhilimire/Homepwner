@@ -47,6 +47,17 @@ class ItemsViewController: UITableViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Get height of status bar
+        let statusBarHeight = UIApplication.shared.statusBarFrame.height
+        
+        let insets = UIEdgeInsets(top: statusBarHeight, left: 0, bottom: 0, right: 0)
+        tableView.contentInset = insets
+        tableView.scrollIndicatorInsets = insets
+        
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 65
+        
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -54,12 +65,23 @@ class ItemsViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath) as! ItemCell
         
+        // Set the text on the cell with the description of the item
+        // taht is at teh nth index of items where n = row this cell will appear on the tableview
+    
         let item = itemStore.allItems[indexPath.row]
-        cell.textLabel?.text = item.name
-        cell.detailTextLabel?.text = "$\(item.valueInDollars)"
         
+        // configure the cell with the Item
+        cell.nameLabel.text = item.name
+        cell.serialNumberLabel.text = item.serialNumber
+        
+        if item.valueInDollars >= 50 {
+            cell.valueLabel.textColor = UIColor.green
+        } else {
+            cell.valueLabel.textColor = UIColor.red
+        }
+        cell.valueLabel.text = "$\(item.valueInDollars)"
         return cell
     }
     
