@@ -55,8 +55,10 @@ class ItemsViewController: UITableViewController {
         tableView.contentInset = insets
         tableView.scrollIndicatorInsets = insets
         
-        tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = 65
+        // Sets up an automatic row height with an estimated height, but doesnt appear to be working properly
+//        tableView.rowHeight = UITableView.automaticDimension
+//        tableView.estimatedRowHeight = 65
+        tableView.rowHeight = 65
         
     }
     
@@ -68,7 +70,7 @@ class ItemsViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath) as! ItemCell
         
         // Set the text on the cell with the description of the item
-        // taht is at teh nth index of items where n = row this cell will appear on the tableview
+        // that is at the nth index of items where n = row this cell will appear on the tableview
     
         let item = itemStore.allItems[indexPath.row]
         
