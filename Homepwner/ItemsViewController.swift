@@ -55,11 +55,10 @@ class ItemsViewController: UITableViewController {
         tableView.contentInset = insets
         tableView.scrollIndicatorInsets = insets
         
-        // Sets up an automatic row height with an estimated height, but doesnt appear to be working properly
-//        tableView.rowHeight = UITableView.automaticDimension
-//        tableView.estimatedRowHeight = 65
-        tableView.rowHeight = 65
-        
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

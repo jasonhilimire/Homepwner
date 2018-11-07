@@ -17,7 +17,7 @@ class ItemCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        //allows the labes to automatically adjust for size
+        //allows the labels to automatically adjust for size
         nameLabel.adjustsFontForContentSizeCategory = true
         serialNumberLabel.adjustsFontForContentSizeCategory = true
         valueLabel.adjustsFontForContentSizeCategory = true
