@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		A377A0AD217ED0810002D70F /* ItemStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A377A0AC217ED0810002D70F /* ItemStore.swift */; };
 		A39ED8002191345B00C66E48 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39ED7FF2191345B00C66E48 /* ItemCell.swift */; };
+		A3A97C8521932F4F007E2F45 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A97C8421932F4F007E2F45 /* DetailViewController.swift */; };
 		A3B92BA9217D62AA00F56DA3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B92BA8217D62AA00F56DA3 /* AppDelegate.swift */; };
 		A3B92BAE217D62AA00F56DA3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3B92BAC217D62AA00F56DA3 /* Main.storyboard */; };
 		A3B92BB0217D62AC00F56DA3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3B92BAF217D62AC00F56DA3 /* Assets.xcassets */; };
@@ -39,6 +40,7 @@
 /* Begin PBXFileReference section */
 		A377A0AC217ED0810002D70F /* ItemStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemStore.swift; sourceTree = "<group>"; };
 		A39ED7FF2191345B00C66E48 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
+		A3A97C8421932F4F007E2F45 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		A3B92BA5217D62AA00F56DA3 /* Homepwner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Homepwner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3B92BA8217D62AA00F56DA3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A3B92BAD217D62AA00F56DA3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 			children = (
 				A3B92BA8217D62AA00F56DA3 /* AppDelegate.swift */,
 				A3B92BAC217D62AA00F56DA3 /* Main.storyboard */,
+				A3A97C8421932F4F007E2F45 /* DetailViewController.swift */,
 				A39ED7FF2191345B00C66E48 /* ItemCell.swift */,
 				A3B92BD8217D63D800F56DA3 /* Item.swift */,
 				A377A0AC217ED0810002D70F /* ItemStore.swift */,
@@ -268,6 +271,7 @@
 				A3B92BD7217D62E600F56DA3 /* ItemsViewController.swift in Sources */,
 				A3B92BD9217D63D800F56DA3 /* Item.swift in Sources */,
 				A377A0AD217ED0810002D70F /* ItemStore.swift in Sources */,
+				A3A97C8521932F4F007E2F45 /* DetailViewController.swift in Sources */,
 				A3B92BA9217D62AA00F56DA3 /* AppDelegate.swift in Sources */,
 				A39ED8002191345B00C66E48 /* ItemCell.swift in Sources */,
 			);

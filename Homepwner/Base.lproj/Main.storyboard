@@ -86,6 +86,7 @@
                                     <outlet property="nameLabel" destination="CUY-HE-DOb" id="Wc4-7k-74p"/>
                                     <outlet property="serialNumberLabel" destination="x5B-HM-kQ9" id="met-Hr-h2z"/>
                                     <outlet property="valueLabel" destination="sEq-dP-knb" id="cA3-29-vvk"/>
+                                    <segue destination="qbA-sJ-Zut" kind="show" id="vlz-VC-hUq"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -99,10 +100,10 @@
             </objects>
             <point key="canvasLocation" x="77.599999999999994" y="50.824587706146929"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="WsZ-oY-1n0">
             <objects>
-                <viewController id="qbA-sJ-Zut" sceneMemberID="viewController">
+                <viewController id="qbA-sJ-Zut" customClass="DetailViewController" customModule="Homepwner" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cGM-hq-Sy8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -184,6 +185,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="quS-LT-qdm"/>
                     </view>
+                    <connections>
+                        <outlet property="dateLabel" destination="wLY-Ws-jzw" id="yIE-jf-aIO"/>
+                        <outlet property="nameField" destination="Ua4-Gm-3Oa" id="9ls-5D-rRm"/>
+                        <outlet property="serialNumberField" destination="0Lu-fm-Wix" id="LHP-sg-9dn"/>
+                        <outlet property="valueField" destination="naT-RZ-duj" id="uZh-dq-e1l"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7jd-4K-ohM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
