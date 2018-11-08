@@ -58,7 +58,12 @@ class ItemsViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60
+        switch (indexPath.section) {
+        case 1:
+            return 60
+        default:
+            return UITableView.automaticDimension
+        }
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -121,5 +126,21 @@ class ItemsViewController: UITableViewController {
         itemStore.moveItem(from: sourceIndexPath.row, to: destinationIndexPath.row)
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // If the triggered segue is the "showItem" segue
+        switch segue.identifier {
+        case "showItem"? :
+            //Figure out which row was tapped
+            if let row = tableView.indexPathForSelectedRow?.row {
+                
+                //Get the item associated with this row and pass it along
+                let item = itemStore.allItems[row]
+                let detalViewController = segue.destination as! DetailViewController
+                detalViewController.item = item
+            }
+        default:
+            preconditionFailure("Unexpected segue Identifier")
+        }
+    }
     
 }
