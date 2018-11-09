@@ -10,9 +10,8 @@ import UIKit
 class ItemsViewController: UITableViewController {
     
     var itemStore: ItemStore!
-    
-    
-    @IBAction func addNewItem(_ sender: UIButton) {
+
+    @IBAction func addNewItem(_ sender: UIBarButtonItem) {
         //Create a new item and add to the store
         let newItem = itemStore.createItem()
         
@@ -29,31 +28,9 @@ class ItemsViewController: UITableViewController {
         }
     }
     
-    @IBAction func toggleEditingMode(_ sender: UIButton) {
-        // If currently editing
-        if isEditing {
-            //change text of button to inform user of state
-            sender.setTitle("Edit", for: .normal)
-            
-            //Turn off Editing mode
-            setEditing(false, animated: true)
-        } else {
-            sender.setTitle("Done", for: .normal)
-            
-            //Enter Editing mode
-            setEditing(true, animated: true)
-        }
-        
-    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Get height of status bar
-        let statusBarHeight = UIApplication.shared.statusBarFrame.height
-        
-        let insets = UIEdgeInsets(top: statusBarHeight, left: 0, bottom: 0, right: 0)
-        tableView.contentInset = insets
-        tableView.scrollIndicatorInsets = insets
         
     }
     
@@ -145,6 +122,13 @@ class ItemsViewController: UITableViewController {
         default:
             preconditionFailure("Unexpected segue Identifier")
         }
+    }
+    
+    // Adds the Edit Button to the Navigation bar
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        navigationItem.leftBarButtonItem = editButtonItem
     }
     
 }

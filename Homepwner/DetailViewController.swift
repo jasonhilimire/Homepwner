@@ -21,7 +21,12 @@ class DetailViewController: UIViewController, UITextFieldDelegate {
     @IBAction func backgroundTapped(_ sender: Any) {
         view.endEditing(true)
     }
-    var item: Item!
+    var item: Item! {
+         // Updates the navigation bar to show the title of the item
+        didSet {
+            navigationItem.title = item.name
+        }
+    }
     
     let numberFormatter: NumberFormatter = {
         let formatter = NumberFormatter()
@@ -67,7 +72,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate {
         
     }
     
-    // text field resing in response to return key being pressed
+    // text field resigning in response to return key being pressed
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
