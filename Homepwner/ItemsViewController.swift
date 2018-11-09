@@ -23,7 +23,7 @@ class ItemsViewController: UITableViewController {
         if let index = itemStore.allItems.index(of: newItem) {
             let indexPath = IndexPath(row: index, section: 0)
         
-        //Inser tnew row into the table
+        //Insert new row into the table
             tableView.insertRows(at: [indexPath], with: .automatic)
         
         }
@@ -55,6 +55,10 @@ class ItemsViewController: UITableViewController {
         tableView.contentInset = insets
         tableView.scrollIndicatorInsets = insets
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

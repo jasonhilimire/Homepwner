@@ -127,6 +127,9 @@
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="qbA-sJ-Zut" id="26n-kT-bGa"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -144,6 +147,9 @@
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="qbA-sJ-Zut" id="aCy-QB-fcK"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -161,6 +167,9 @@
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="qbA-sJ-Zut" id="vS0-rV-5Wg"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -179,6 +188,7 @@
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="quS-LT-qdm" firstAttribute="trailing" secondItem="96O-52-gai" secondAttribute="trailing" constant="16" id="ABi-vw-l8D"/>
                             <constraint firstItem="quS-LT-qdm" firstAttribute="bottom" secondItem="96O-52-gai" secondAttribute="bottom" constant="8" id="D7c-Xz-cFb"/>
@@ -186,6 +196,9 @@
                             <constraint firstItem="96O-52-gai" firstAttribute="leading" secondItem="quS-LT-qdm" secondAttribute="leading" constant="16" id="vVL-Xq-LPL"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="quS-LT-qdm"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="dTx-d3-YLr" appends="YES" id="bc6-57-y8B"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="dateLabel" destination="wLY-Ws-jzw" id="yIE-jf-aIO"/>
@@ -195,6 +208,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7jd-4K-ohM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="dTx-d3-YLr">
+                    <connections>
+                        <action selector="backgroundTapped:" destination="qbA-sJ-Zut" id="xz4-lL-GLN"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1848.8" y="49.925037481259373"/>
         </scene>
