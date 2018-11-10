@@ -87,8 +87,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="96O-52-gai">
-                                <rect key="frame" x="16" y="72" width="343" height="587"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="96O-52-gai">
+                                <rect key="frame" x="16" y="72" width="343" height="543"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="DbO-Mf-KJ2">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
@@ -111,7 +111,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="pEh-7i-8mQ">
-                                        <rect key="frame" x="0.0" y="38" width="343" height="30"/>
+                                        <rect key="frame" x="0.0" y="31" width="343" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Serial" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cfJ-Bx-bky">
                                                 <rect key="frame" x="0.0" y="0.0" width="43" height="30"/>
@@ -131,7 +131,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="DDN-Qm-pnc">
-                                        <rect key="frame" x="0.0" y="76" width="343" height="30"/>
+                                        <rect key="frame" x="0.0" y="62" width="343" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hOo-nI-KNH">
                                                 <rect key="frame" x="0.0" y="0.0" width="42" height="30"/>
@@ -151,11 +151,14 @@
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Date Created" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wLY-Ws-jzw">
-                                        <rect key="frame" x="0.0" y="114" width="343" height="473"/>
+                                        <rect key="frame" x="0.0" y="93" width="343" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="248" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="moz-YP-dCO">
+                                        <rect key="frame" x="0.0" y="114.5" width="343" height="428.5"/>
+                                    </imageView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="am1-Av-5d6" firstAttribute="leading" secondItem="cfJ-Bx-bky" secondAttribute="leading" id="AeY-c9-VsN"/>
@@ -163,13 +166,29 @@
                                     <constraint firstItem="cfJ-Bx-bky" firstAttribute="leading" secondItem="hOo-nI-KNH" secondAttribute="leading" id="Lef-jF-21E"/>
                                 </constraints>
                             </stackView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eor-Bg-pSX">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="NHr-J5-DzN"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem systemItem="camera" id="o5f-Q6-eOG">
+                                        <connections>
+                                            <action selector="takePicture:" destination="qbA-sJ-Zut" id="d17-x8-wxG"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="Eor-Bg-pSX" firstAttribute="top" secondItem="96O-52-gai" secondAttribute="bottom" constant="8" id="2sC-VF-A5h"/>
+                            <constraint firstItem="Eor-Bg-pSX" firstAttribute="trailing" secondItem="quS-LT-qdm" secondAttribute="trailing" id="3bw-SW-QF7"/>
                             <constraint firstItem="quS-LT-qdm" firstAttribute="trailing" secondItem="96O-52-gai" secondAttribute="trailing" constant="16" id="ABi-vw-l8D"/>
-                            <constraint firstItem="quS-LT-qdm" firstAttribute="bottom" secondItem="96O-52-gai" secondAttribute="bottom" constant="8" id="D7c-Xz-cFb"/>
+                            <constraint firstItem="Eor-Bg-pSX" firstAttribute="leading" secondItem="quS-LT-qdm" secondAttribute="leading" id="Vx7-Yg-hB3"/>
                             <constraint firstItem="96O-52-gai" firstAttribute="top" secondItem="quS-LT-qdm" secondAttribute="top" constant="8" id="n2d-YA-QVU"/>
+                            <constraint firstAttribute="bottom" secondItem="Eor-Bg-pSX" secondAttribute="bottom" id="tDa-pN-6Yw"/>
                             <constraint firstItem="96O-52-gai" firstAttribute="leading" secondItem="quS-LT-qdm" secondAttribute="leading" constant="16" id="vVL-Xq-LPL"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="quS-LT-qdm"/>
@@ -179,6 +198,7 @@
                     </view>
                     <connections>
                         <outlet property="dateLabel" destination="wLY-Ws-jzw" id="yIE-jf-aIO"/>
+                        <outlet property="imageView" destination="moz-YP-dCO" id="qqY-Gu-TGs"/>
                         <outlet property="nameField" destination="Ua4-Gm-3Oa" id="9ls-5D-rRm"/>
                         <outlet property="serialNumberField" destination="0Lu-fm-Wix" id="LHP-sg-9dn"/>
                         <outlet property="valueField" destination="naT-RZ-duj" id="uZh-dq-e1l"/>
