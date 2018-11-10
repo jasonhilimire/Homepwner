@@ -39,6 +39,10 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationC
     }
     
     
+    @IBAction func clearPicture(_ sender: UIBarButtonItem) {
+
+        imageView.image = nil
+    }
     
     var item: Item! {
          // Updates the navigation bar to show the title of the item

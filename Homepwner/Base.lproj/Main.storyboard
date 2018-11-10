@@ -177,6 +177,12 @@
                                             <action selector="takePicture:" destination="qbA-sJ-Zut" id="d17-x8-wxG"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="COW-2L-gwh"/>
+                                    <barButtonItem systemItem="stop" id="Xkg-hq-4Ue">
+                                        <connections>
+                                            <action selector="clearPicture:" destination="qbA-sJ-Zut" id="grD-JB-m0x"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                         </subviews>
