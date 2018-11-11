@@ -36,12 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
-        let success = itemStore.saveChanges()
-        if (success) {
-            print("Saved all of the items")
-        } else {
-            print("Could not save any of the items")
-        }
+        itemStore.saveChanges()
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
@@ -53,7 +48,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
-        // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+        itemStore.saveChanges()
     }
 
 

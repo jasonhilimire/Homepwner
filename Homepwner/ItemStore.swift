@@ -12,6 +12,7 @@ class ItemStore {
     
     var allItems = [Item]()
     
+    
     //Construct a file URL
     let itemArchiveURL: URL = {
         let documentsDirectories = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
@@ -20,20 +21,43 @@ class ItemStore {
     }()
     
     // save the changes to the File URL
-    func saveChanges() -> Bool {
+//    func saveChanges() -> Bool {
+//        print("Saving items to: \(itemArchiveURL.path)")
+//
+//        return NSKeyedArchiver.archiveRootObject(allItems, toFile: itemArchiveURL.path)
+//        
+//    }
+    
+    // Rewritten as ^^ is deprecated
+    func saveChanges() {
         print("Saving items to: \(itemArchiveURL.path)")
-
-        return NSKeyedArchiver.archiveRootObject(allItems, toFile: itemArchiveURL.path)
-        
-    }
-    
-
-    
-    init() {
-        if let archivedItems = NSKeyedUnarchiver.unarchiveObject(withFile: itemArchiveURL.path) as? [Item] {
-            allItems = archivedItems
+        do {
+            let data = try NSKeyedArchiver.archivedData(withRootObject: allItems, requiringSecureCoding: false)
+            try data.write(to: itemArchiveURL)
+        } catch {
+            print("Couldn't write file")
         }
     }
+    
+    // Initialize: however this was deprecatd in iOS12 and i cant make it fucking work
+//    init() {
+//        if let archivedItems = NSKeyedUnarchiver.unarchiveObject(withFile: itemArchiveURL.path) as? [Item] {
+//            allItems = archivedItems
+//        }
+//    }
+    
+    init() {
+        if let unarchivedItems = UserDefaults.standard.object(forKey: itemArchiveURL.path) as? Data {
+            if let archivedItems = try? NSKeyedUnarchiver.unarchivedObject(ofClasses: [NSDictionary.self, Item.self], from: unarchivedItems) {
+                allItems = archivedItems as! [Item]
+            }
+        }
+    }
+    
+
+        
+
+    
     
 
 
